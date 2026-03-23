@@ -84,3 +84,21 @@ const mech1 = new ClockMechanism();
 const mech2 = new ClockMechanism();
 
 console.log(`Same or not: ${mech1 === mech2}`);
+
+function createStaticConfig() {
+  const config = {
+    platfrom: 0,
+    tracks: 12,
+    junction: "Bengaluru"
+
+  }
+  return Object.freeze(config)
+}
+
+const stationConfig = createStaticConfig()
+
+
+console.log("Platform: ", stationConfig.platfrom);
+stationConfig.platfrom = 9999
+console.log("Platform 2: ", stationConfig.platfrom);
+
